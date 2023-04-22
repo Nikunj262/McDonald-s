@@ -1,0 +1,340 @@
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_payment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
+    <include
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@drawable/topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/top"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="-40dp"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Checkout"
+                    android:layout_marginTop="40dp"
+                    android:textSize="30sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/grey"
+                    />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+            <!--Fields-->
+            <TableLayout
+                android:id="@+id/pay_fields"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:stretchColumns="*">
+
+                <TextView
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/full_name"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableRow android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:id="@+id/fullname"
+                        android:layout_span="3"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/firstname_lastname"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+                </TableRow>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/email_id"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableRow android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:id="@+id/pay_email"
+                        android:layout_span="3"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/np2622000_gmail_com"
+                        android:inputType="textEmailAddress"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+                </TableRow>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="@string/address"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_marginTop="3dp"
+                        android:layout_span="3"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/address1"
+                        android:inputType="textPersonName"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+                </TableRow>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/phone_number"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/pay_name"
+                        android:layout_span="3"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/_519_781_9460"
+                        android:inputType="phone"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+                </TableRow>
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/card_details"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TableRow>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3">
+
+                        <EditText
+                            android:id="@+id/pay_card_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/borderradius"
+                            android:digits="0123456789"
+                            android:hint="@string/card_number"
+                            android:inputType="number"
+                            android:nextFocusDown="@+id/pay_cvv"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/grey" />
+
+                        <ImageView
+                            android:id="@+id/visa"
+                            android:layout_width="80dp"
+                            android:layout_height="68dp"
+                            android:layout_marginTop="-6dp"
+                            android:layout_toLeftOf="@+id/pay_card_image"
+                            android:src="@mipmap/visa_foreground" />
+
+                        <ImageView
+                            android:id="@+id/pay_card_image"
+                            android:layout_width="52dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@mipmap/mastercard_foreground" />
+
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/cardHolderName"
+                        android:layout_span="3"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/card_holder_name"
+                        android:inputType="textPersonName"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+                </TableRow>
+
+                <TableRow>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_span="1"
+                        android:paddingEnd="2dp"
+                        tools:ignore="RtlSymmetry">
+
+                        <EditText
+                            android:id="@+id/pay_cvv"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/borderradius"
+                            android:hint="@string/cvv"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/grey" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/pay_cvv2"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/borderradius"
+                        android:hint="@string/expiry_date"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/grey" />
+
+                </TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pay_fields"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/your_purchase"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            <LinearLayout android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/borderradius"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/fullImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/name"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/sub_total"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.251"
+                    app:layout_constraintStart_toEndOf="@+id/fullImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/price"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txtdes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
+</LinearLayout>
+            </LinearLayout>
+            </TableLayout>
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/finalpaybtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pay_fields"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/place_order"
+                    android:textColor="@color/primaryColor"
+                    />
+            </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
