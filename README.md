@@ -1,5 +1,5 @@
 # McDonald-s
-This is a Android App includes firebase connectivity.
+This is a Android App includes firebase connectivity. Please download APK file to run the app on your android device.
 
 # App Demonstration
 https://user-images.githubusercontent.com/64143721/233759183-6da1dc4a-ba43-461f-a494-76799b49fd03.mp4
